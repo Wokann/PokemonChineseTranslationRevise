@@ -19,6 +19,10 @@ foreach (var gameCode in GAME_CODE_TO_TITLE.Keys)
   CopyFolder($"files/{gameCode}/overlay/", $"out/{gameCode}/overlay/");
 
   EditBanner(gameCode, GAME_CODE_TO_TITLE[gameCode]);
+
+  // Copy dwc/utility.bin
+  CopyFolder($"files/DP/data/dwc/", $"out/{gameCode}/data/data/");
+  CopyFolder($"files/DP/data/dwc/", $"out/{gameCode}/data/dwc/");
 }
 
 CopyFolder("textures/DP/battle/graphic/batt_obj.narc/", "textures/HGSS/a/0/0/8/");

@@ -37,6 +37,10 @@ foreach (var gameCode in GAME_CODE_TO_TITLE.Keys)
   Console.WriteLine($"Edited: overlay_0011.bin");
 
   EditBanner(gameCode, GAME_CODE_TO_TITLE[gameCode]);
+
+  // Copy dwc/utility.bin
+  CopyFolder($"files/DP/data/dwc/", $"out/{gameCode}/data/data/");
+  CopyFolder($"files/DP/data/dwc/", $"out/{gameCode}/data/dwc/");
 }
 
 var text = File.ReadAllText("files/DP/Messages.txt");
