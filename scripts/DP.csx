@@ -40,12 +40,14 @@ foreach (var gameCode in GAME_CODE_TO_TITLE.Keys)
 
   // Edit arm9.bin
   var arm9 = File.ReadAllBytes($"original_files/DP/{gameCode}/arm9.bin");
+  Dictionary<string, string> symbols = new();
 
   foreach (var folder in Directory.EnumerateDirectories("asm/DP/replSource/"))
   {
     int address = Convert.ToInt32(Path.GetFileName(folder), 16);
-    CompileArm9(ref arm9, address, "DP", gameCode);
+    CompileArm9(ref arm9, address, "DP", gameCode, ref symbols);
   }
+  File.WriteAllText($"out/{gameCode}/symbols.txt", string.Join('\n', symbols.Select(x => $"{x.Key} = 0x{x.Value};")));
 
   // Sort easy chat words
   var aikotobaList = SortEasyChatWords(ref arm9, (uint)(gameCode == "D" ? 0x1001b4 : 0x1001b8), easyChatWords.ToArray());
