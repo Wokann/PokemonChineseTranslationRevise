@@ -121,10 +121,10 @@ foreach (var gameCode in GAME_CODE_TO_TITLE.Keys)
   Console.WriteLine($"Edited: overlay_0122.bin");
 
   // Edit overarm9.bin
-  var overarm9 = File.ReadAllBytes($"original_files/HGSS/{gameCode}/overarm9.bin");
+  //var overarm9 = File.ReadAllBytes($"original_files/HGSS/{gameCode}/overarm9.bin");
 
-  File.WriteAllBytes($"out/{gameCode}/overarm9.bin", overarm9);
-  Console.WriteLine($"Edited: overarm9.bin");
+  //File.WriteAllBytes($"out/{gameCode}/overarm9.bin", overarm9);
+  //Console.WriteLine($"Edited: overarm9.bin");
 
   EditBanner("HGSS", gameCode, GAME_CODE_TO_TITLE[gameCode]);
 
