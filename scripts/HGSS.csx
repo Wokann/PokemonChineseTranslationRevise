@@ -87,6 +87,12 @@ foreach (var gameCode in GAME_CODE_TO_TITLE.Keys)
   File.WriteAllBytes($"out/{gameCode}/overlay/overlay_0065.bin", BLZ.Compress(overlay_0065));
   Console.WriteLine($"Edited: overlay_0065.bin");
 
+  // Edit overlay_0074.bin
+  var overlay_0074 = File.ReadAllBytes($"original_files/HGSS/{gameCode}/overlay/overlay_0074.bin");
+
+  File.WriteAllBytes($"out/{gameCode}/overlay/overlay_0074.bin", overlay_0074);
+  Console.WriteLine($"Edited: overlay_0074.bin");
+
   // Decopress and Edit overlay_0112.bin
   var overlay_0112 = BLZ.Decompress(File.ReadAllBytes($"original_files/HGSS/{gameCode}/overlay/overlay_0112.bin"));
 
@@ -112,6 +118,12 @@ foreach (var gameCode in GAME_CODE_TO_TITLE.Keys)
   File.WriteAllBytes($"out/{gameCode}/overlay/overlay_0122.bin", BLZ.Compress(overlay_0122));
   Console.WriteLine($"Edited: overlay_0122.bin");
 
+  // Edit overarm9.bin
+  var overarm9 = File.ReadAllBytes($"original_files/HGSS/{gameCode}/overarm9.bin");
+
+  File.WriteAllBytes($"out/{gameCode}/overarm9.bin", overarm9);
+  Console.WriteLine($"Edited: overarm9.bin");
+  
   EditBanner("HGSS", gameCode, GAME_CODE_TO_TITLE[gameCode]);
 
   // Copy md5.txt

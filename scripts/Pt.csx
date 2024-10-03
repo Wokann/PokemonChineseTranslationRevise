@@ -99,6 +99,18 @@ foreach (var gameCode in GAME_CODE_TO_TITLE.Keys)
   File.WriteAllBytes($"out/{gameCode}/overlay/overlay_0094.bin", overlay_0094);
   Console.WriteLine($"Edited: overlay_0094.bin");
 
+  // Edit overlay_0097.bin
+  var overlay_0097 = File.ReadAllBytes($"original_files/Pt/{gameCode}/overlay/overlay_0097.bin");
+
+  File.WriteAllBytes($"out/{gameCode}/overlay/overlay_0097.bin", overlay_0097);
+  Console.WriteLine($"Edited: overlay_0097.bin");
+
+  // Edit overarm9.bin
+  var overarm9 = File.ReadAllBytes($"original_files/Pt/{gameCode}/overarm9.bin");
+
+  File.WriteAllBytes($"out/{gameCode}/overarm9.bin", overarm9);
+  Console.WriteLine($"Edited: overarm9.bin");
+
   EditBanner("Pt", gameCode, GAME_CODE_TO_TITLE[gameCode]);
 
   // Copy md5.txt
