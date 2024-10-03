@@ -31,9 +31,6 @@ void CopyFolder(string from, string to, string pattern = "*")
   {
     var fileTo = Path.Combine(to, Path.GetRelativePath(from, file));
     Directory.CreateDirectory(Path.GetDirectoryName(fileTo));
-  foreach (var file in Directory.GetFiles(from, pattern))
-  {
-    var fileTo = Path.Combine(to, Path.GetFileName(file));
     File.Copy(file, fileTo, true);
     Console.WriteLine($"Copied: {file} -> {fileTo}");
   }
